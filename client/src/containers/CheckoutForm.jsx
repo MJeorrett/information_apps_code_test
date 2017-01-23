@@ -7,7 +7,7 @@ class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="main-container">
         <h1>Checkout Form</h1>
         <PersonalDetails />
         <AddressDetails />
