@@ -2,6 +2,7 @@ import React from 'react'
 
 import PersonalDetails from './PersonalDetails'
 import AddressDetails from './AddressDetails'
+import CheckoutButton from '../components/CheckoutButton'
 import Validator from '../helpers/Validator'
 
 class CheckoutForm extends React.Component {
@@ -32,7 +33,7 @@ class CheckoutForm extends React.Component {
       [ 'additional_info', Validator.none ]
     ]
     this.handleUpdate = this.handleUpdate.bind( this )
-    this.handleSubmitClicked = this.handleSubmitClicked.bind( this )
+    this.handleCheckoutClicked = this.handleCheckoutClicked.bind( this )
   }
 
   handleUpdate( fieldName, newValue ) {
@@ -43,11 +44,11 @@ class CheckoutForm extends React.Component {
     const stateDiff = {}
     stateDiff[fieldName] = newValue
     stateDiff['invalid_fields'] = newInvalidFields
-    
+
     this.setState( stateDiff )
   }
 
-  handleSubmitClicked( ev ) {
+  handleCheckoutClicked( ev ) {
     ev.preventDefault()
     const newInvalidFields = []
     this.validations.map( (validation) => {
@@ -83,9 +84,10 @@ class CheckoutForm extends React.Component {
             onUpdate={ this.handleUpdate }
             invalidFields={ this.state.invalid_fields }
           />
-          <div className="section-container">
-            <button type="submit" onClick={ this.handleSubmitClicked }>Checkout</button>
-          </div>
+        <CheckoutButton
+          checkoutSuccessfull={ this.state.checkoutSuccessfull }
+          onClick={ this.handleCheckoutClicked }
+        />
         </form>
       </div>
     )
