@@ -8,7 +8,6 @@ class InputWithIcon extends React.Component {
   }
 
   handleUpdate( ev ) {
-    console.log( this.props );
     const newValue = ev.target.value
     this.props.onUpdate( this.props.fieldName, newValue )
   }

@@ -22,13 +22,13 @@ class CountrySelect extends React.Component {
 
   render() {
     const options = this.state.countries.map( (country, index) => {
-      return <option key={ index } value={ index }>{ country }</option>
+      return <option key={ index } value={ country }>{ country }</option>
     })
 
     options.unshift(<option key="please-select" value="" disabled>Country</option>)
 
     return(
-      <select value="">
+      <select value={ this.props.country } onChange={ this.props.onUpdate }>
         { options }
       </select>
     )
