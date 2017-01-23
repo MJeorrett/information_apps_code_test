@@ -21,21 +21,28 @@ class AddressDetails extends React.Component {
   }
 
   render() {
+
     return (
       <div className="section-container">
         <div className="input-group">
-          <CountrySelect onUpdate={ this.handleCountrySelected } country={ this.props.country }/>
+          <CountrySelect
+            onUpdate={ this.handleCountrySelected }
+            country={ this.props.country }
+            invalidFields={ this.props.invalidFields }
+          />
           <InputWithIcon
             placeholder="City"
             fieldName="city"
             dataValue={ this.props.city }
             onUpdate={ this.props.onUpdate }
+            invalidFields={ this.props.invalidFields }
           />
           <InputWithIcon
             placeholder="Post code"
             fieldName="post_code"
             dataValue={ this.props.post_code }
             onUpdate={ this.props.onUpdate }
+            invalidFields={ this.props.invalidFields }
           />
         </div>
         <div className="input-group">
@@ -44,6 +51,7 @@ class AddressDetails extends React.Component {
             fieldName="address"
             dataValue={ this.props.address }
             onUpdate={ this.props.onUpdate }
+            invalidFields={ this.props.invalidFields }
           />
         </div>
         <div className="input-group">

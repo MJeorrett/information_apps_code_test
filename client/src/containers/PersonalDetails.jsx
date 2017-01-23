@@ -14,13 +14,16 @@ class PersonalDetails extends React.Component {
             dataValue={ this.props.first_name }
             onUpdate={ this.props.onUpdate }
             imageName="person"
+            invalidFields={ this.props.invalidFields }
           />
           <InputWithIcon
             placeholder="Last Name"
             fieldName="last_name"
             dataValue={ this.props.last_name }
             onUpdate={ this.props.onUpdate }
-            imageName="person" />
+            imageName="person"
+            invalidFields={ this.props.invalidFields }
+          />
         </div>
         <div className="input-group">
           <InputWithIcon
@@ -29,6 +32,7 @@ class PersonalDetails extends React.Component {
             dataValue={ this.props.email }
             onUpdate={ this.props.onUpdate }
             imageName="envelope"
+            invalidFields={ this.props.invalidFields }
           />
           <InputWithIcon
             placeholder="Phone"
@@ -36,6 +40,7 @@ class PersonalDetails extends React.Component {
             dataValue={ this.props.phone }
             onUpdate={ this.props.onUpdate }
             imageName="phone"
+            invalidFields={ this.props.invalidFields }
           />
         </div>
       </div>

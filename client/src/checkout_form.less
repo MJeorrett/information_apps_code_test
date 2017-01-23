@@ -2,9 +2,10 @@
 @border-thickness: 2px;
 @border-style: solid;
 @backgroud-color: #C3ABEC;
+@default-font-size: 20px;
 
 * {
-  font-size: 20px;
+  font-size: @default-font-size;
   font-family: 'Quicksand', sans-serif;
   color: #444;
 }
@@ -76,8 +77,6 @@ textarea {
   height: 200%;
 }
 
-.validation-error {
-  color: tomato;
+.invalid {
   border-color: tomato;
-  background-color: lightpink;
 }

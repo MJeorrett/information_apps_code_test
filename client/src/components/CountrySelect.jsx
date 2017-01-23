@@ -21,14 +21,26 @@ class CountrySelect extends React.Component {
   }
 
   render() {
+
+    let className = ""
+    let defaultText = "Country"
+    if ( this.props.invalidFields && this.props.invalidFields.indexOf( 'country' ) != -1 ) {
+      className = "invalid"
+      defaultText = "Required"
+    }
+
     const options = this.state.countries.map( (country, index) => {
       return <option key={ index } value={ country }>{ country }</option>
     })
 
-    options.unshift(<option key="please-select" value="" disabled>Country</option>)
+    options.unshift(
+      <option key="please-select" value="" disabled>
+        { defaultText }
+      </option>
+    )
 
     return(
-      <select value={ this.props.country } onChange={ this.props.onUpdate }>
+      <select className={ className } value={ this.props.country } onChange={ this.props.onUpdate }>
         { options }
       </select>
     )
