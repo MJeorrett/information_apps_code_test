@@ -47,6 +47,7 @@ class InputWithIcon extends React.Component {
         onChange={ this.handleUpdate }
         value={ this.props.dataValue }
         onFocus={ this.resetPlaceholderText }
+        disabled={ this.props.locked }
       />
     )
   }

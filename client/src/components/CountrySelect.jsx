@@ -40,7 +40,12 @@ class CountrySelect extends React.Component {
     )
 
     return(
-      <select className={ className } value={ this.props.country } onChange={ this.props.onUpdate }>
+      <select
+        className={ className }
+        value={ this.props.country }
+        onChange={ this.props.onUpdate }
+        disabled={ this.props.locked }
+      >
         { options }
       </select>
     )

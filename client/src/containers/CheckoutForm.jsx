@@ -77,6 +77,7 @@ class CheckoutForm extends React.Component {
             phone={ this.state.phone }
             onUpdate={ this.handleUpdate }
             invalidFields={ this.state.invalid_fields }
+            disabled={ this.state.checkout_successfull }
           />
           <AddressDetails
             country={ this.state.country }
@@ -86,6 +87,7 @@ class CheckoutForm extends React.Component {
             additional_info={ this.state.additional_info }
             onUpdate={ this.handleUpdate }
             invalidFields={ this.state.invalid_fields }
+            disabled={ this.state.checkout_successfull }
           />
         <CheckoutButton
           checkoutSuccessfull={ this.state.checkout_successfull }

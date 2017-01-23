@@ -29,6 +29,7 @@ class AddressDetails extends React.Component {
             onUpdate={ this.handleCountrySelected }
             country={ this.props.country }
             invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
           />
           <InputWithIcon
             placeholder="City"
@@ -36,6 +37,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.city }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
           />
           <InputWithIcon
             placeholder="Post code"
@@ -43,6 +45,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.post_code }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
           />
         </div>
         <div className="input-group">
@@ -52,13 +55,15 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.address }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
           />
         </div>
         <div className="input-group">
           <textarea
-            placeholder="Additional info"
+            placeholder={ this.props.disabled ? "" : "Additional info" }
             value={ this.props.additional_info }
             onChange={ this.handleAdditionalInfoUpdate }
+            disabled={ this.props.disabled }
           ></textarea>
         </div>
       </div>
