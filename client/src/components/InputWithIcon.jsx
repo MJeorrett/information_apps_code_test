@@ -2,6 +2,17 @@ import React from 'react'
 
 class InputWithIcon extends React.Component {
 
+  constructor() {
+    super()
+    this.handleUpdate = this.handleUpdate.bind( this )
+  }
+
+  handleUpdate( ev ) {
+    console.log( this.props );
+    const newValue = ev.target.value
+    this.props.onUpdate( this.props.fieldName, newValue )
+  }
+
   render() {
     let style = {}
 
@@ -17,7 +28,13 @@ class InputWithIcon extends React.Component {
     }
 
     return (
-      <input type="text" placeholder={ this.props.placeholder } style={ style } />
+      <input
+        type="text"
+        placeholder={ this.props.placeholder }
+        style={ style }
+        onChange={ this.handleUpdate }
+        value={ this.props.dataValue }
+      />
     )
   }
 
