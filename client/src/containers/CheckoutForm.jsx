@@ -11,6 +11,9 @@ class CheckoutForm extends React.Component {
         <h1>Checkout Form</h1>
         <PersonalDetails />
         <AddressDetails />
+        <div className="section-container">
+          <button type="submit">Checkout</button>
+        </div>
       </div>
     )
   }
