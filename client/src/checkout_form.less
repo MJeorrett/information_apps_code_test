@@ -3,6 +3,7 @@
 @border-style: solid;
 @backgroud-color: #C3ABEC;
 @default-font-size: 20px;
+@success-green: #07c507;
 
 * {
   font-size: @default-font-size;
@@ -79,4 +80,10 @@ textarea {
 
 .invalid {
   border-color: tomato;
+}
+
+.checkout-successfull, button.checkout-successfull:hover {
+  border-color: @success-green;
+  color: @success-green;
+  background: #e6fee6;
 }

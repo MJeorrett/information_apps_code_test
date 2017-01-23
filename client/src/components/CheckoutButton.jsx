@@ -5,10 +5,19 @@ class CheckoutButton extends React.Component {
   render() {
 
     let buttonText = "Checkout"
-    if ( this.props.checkoutSuccessfull ) buttonText = "Successfull"
+    let className = ""
+    if ( this.props.checkoutSuccessfull ) {
+      buttonText = "Successfull ✓"
+      className = "checkout-successfull"
+    }
+
     return (
       <div className="section-container">
-        <button type="submit" onClick={ this.props.onClick }>{ buttonText }</button>
+        <button
+          className={className}
+          type="submit"
+          onClick={ this.props.onClick }
+        >{ buttonText }</button>
       </div>
     )
   }
