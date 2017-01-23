@@ -8,12 +8,12 @@ class PersonalDetails extends React.Component {
     return (
       <div className="section-container">
         <div className="input-group">
-          <InputWithIcon placeholder="First Name"/>
-          <InputWithIcon placeholder="Last Name"/>
+          <InputWithIcon placeholder="First Name" imageName="person" />
+          <InputWithIcon placeholder="Last Name" imageName="person" />
         </div>
         <div className="input-group">
-          <InputWithIcon placeholder="E-mail"/>
-          <InputWithIcon placeholder="Phone"/>
+          <InputWithIcon placeholder="E-mail" imageName="envelope" />
+          <InputWithIcon placeholder="Phone" imageName="phone" />
         </div>
       </div>
     )
