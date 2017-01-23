@@ -12,7 +12,6 @@ class CountrySelect extends React.Component {
   }
 
   componentDidMount() {
-    console.log( "componentDidMount");
     const url = 'data/country_names.json'
     XmlHttpHelper.get( url, ( countries ) => {
       this.setState({
