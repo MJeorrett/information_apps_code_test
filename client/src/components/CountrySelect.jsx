@@ -25,10 +25,10 @@ class CountrySelect extends React.Component {
       return <option key={ index } value={ index }>{ country }</option>
     })
 
-    options.unshift(<option key="please-select" value="" selected disabled>Country</option>)
+    options.unshift(<option key="please-select" value="" disabled>Country</option>)
 
     return(
-      <select>
+      <select value="">
         { options }
       </select>
     )
