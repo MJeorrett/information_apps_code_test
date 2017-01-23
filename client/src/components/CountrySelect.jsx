@@ -24,6 +24,9 @@ class CountrySelect extends React.Component {
     const options = this.state.countries.map( (country, index) => {
       return <option key={ index } value={ index }>{ country }</option>
     })
+
+    options.unshift(<option key="please-select" value="" selected disabled>Country</option>)
+
     return(
       <select>
         { options }
