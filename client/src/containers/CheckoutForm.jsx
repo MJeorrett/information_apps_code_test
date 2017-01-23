@@ -19,7 +19,8 @@ class CheckoutForm extends React.Component {
       post_code: "",
       address: "",
       additional_info: "",
-      invalid_fields: []
+      invalid_fields: [],
+      checkout_successfull: false
     }
     this.validations = [
       [ 'first_name', Validator.notBlank ],
@@ -51,14 +52,16 @@ class CheckoutForm extends React.Component {
   handleCheckoutClicked( ev ) {
     ev.preventDefault()
     const newInvalidFields = []
-    this.validations.map( (validation) => {
+    this.validations.forEach( (validation) => {
       const field = validation[0]
       const validator = validation[1]
       const value = this.state[ field ]
       if ( !validator( value ) ) newInvalidFields.push( field )
     })
+    const checkoutSuccessfull = newInvalidFields.length === 0
     this.setState({
-      invalid_fields: newInvalidFields
+      invalid_fields: newInvalidFields,
+      checkout_successfull: checkoutSuccessfull
     })
   }
 
@@ -85,7 +88,7 @@ class CheckoutForm extends React.Component {
             invalidFields={ this.state.invalid_fields }
           />
         <CheckoutButton
-          checkoutSuccessfull={ this.state.checkoutSuccessfull }
+          checkoutSuccessfull={ this.state.checkout_successfull }
           onClick={ this.handleCheckoutClicked }
         />
         </form>
