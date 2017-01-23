@@ -1,11 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 import CheckoutForm from './containers/CheckoutForm'
 
-window.onload = function(){
+window.onload = () => {
   ReactDOM.render(
     <CheckoutForm />,
     document.getElementById('app')
-  );
+  )
 }
