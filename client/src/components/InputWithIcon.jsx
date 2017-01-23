@@ -10,7 +10,7 @@ class InputWithIcon extends React.Component {
         backgroundImage: `url(/images/${this.props.imageName}.png)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "auto",
-        backgroundPosition: "9px 9px",
+        backgroundPosition: "12px 9px",
         backgroundSize: "16px 16px",
         paddingLeft: "45px"
       }
