@@ -4,7 +4,7 @@
 @backgroud-color-top: #B7B4FC;
 @backgroud-color-bottom: #594684;
 @default-font-size: 20px;
-@success-green: #07c507;
+@success-color: @backgroud-color-bottom;
 
 * {
   font-size: @default-font-size;
@@ -88,13 +88,13 @@ textarea {
 }
 
 .checkout-successfull, button.checkout-successfull:hover {
-  border-color: @success-green;
-  color: @success-green;
-  background: #e6fee6;
+  border-color: @success-color;
+  color: @success-color;
+  background: @backgroud-color-top;
 }
 
 .final {
   font-weight: bold;
-  color: @success-green;
-  border-color: @success-green;
+  color: @success-color;
+  border-color: @success-color;
 }
