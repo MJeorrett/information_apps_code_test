@@ -4,6 +4,7 @@ import PersonalDetails from './PersonalDetails'
 import AddressDetails from './AddressDetails'
 import CheckoutButton from '../components/CheckoutButton'
 import Validator from '../helpers/Validator'
+import GoogleMapHelper from '../helpers/GoogleMapHelper'
 
 class CheckoutForm extends React.Component {
 
@@ -42,15 +43,29 @@ class CheckoutForm extends React.Component {
   }
 
   handleUpdate( fieldName, newValue ) {
-    const newInvalidFields = this.state.invalid_fields.slice( 0 )
-    const fieldNameIndex = newInvalidFields.indexOf( fieldName )
-    if ( fieldNameIndex != -1 ) newInvalidFields.splice( fieldNameIndex, 1 )
+    if ( fieldName === 'post_code' ) {
+      this.fetchAddressForPostCode( newValue )
+    }
+    else {
+      const newInvalidFields = this.state.invalid_fields.slice( 0 )
+      const fieldNameIndex = newInvalidFields.indexOf( fieldName )
+      if ( fieldNameIndex != -1 ) newInvalidFields.splice( fieldNameIndex, 1 )
 
-    const stateDiff = {}
-    stateDiff[fieldName] = newValue
-    stateDiff['invalid_fields'] = newInvalidFields
+      const stateDiff = {}
+      stateDiff[fieldName] = newValue
+      stateDiff['invalid_fields'] = newInvalidFields
 
-    this.setState( stateDiff )
+      this.setState( stateDiff )
+    }
+  }
+
+  fetchAddressForPostCode( postCode ) {
+    GoogleMapHelper.fetchDetailsForPostCode( postCode, ( addressDetails ) => {
+      console.log( addressDetails );
+      const stateDiff = addressDetails || {}
+      stateDiff.post_code = postCode
+      this.setState( stateDiff )
+    })
   }
 
   handleCheckoutClicked( ev ) {
