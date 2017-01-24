@@ -54,6 +54,15 @@ class CheckoutForm extends React.Component {
       const fieldNameIndex = newInvalidFields.indexOf( fieldName )
       if ( fieldNameIndex != -1 ) newInvalidFields.splice( fieldNameIndex, 1 )
 
+      const phoneOnlyLegalChars = /^[\d()]+$/.test( newValue )
+
+      if ( fieldName === 'phone' && !phoneOnlyLegalChars && newValue !== "" ) {
+        console.log( "keeping old value" );
+        newValue = this.state.phone
+      }
+
+      console.log(/^\d+$/.test( newValue ));
+
       const stateDiff = {}
       stateDiff[fieldName] = newValue
       stateDiff['invalid_fields'] = newInvalidFields
