@@ -24,7 +24,7 @@ class AddressDetails extends React.Component {
 
     return (
       <div className="section-container">
-        <div className="input-group" style={{paddingBottom: "20px"}}>
+        <div className="input-group">
           <InputWithIcon
             placeholder="Post code"
             fieldName="post_code"
