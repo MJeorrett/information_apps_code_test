@@ -23,7 +23,6 @@ const GoogleMapParser = {
   },
 
   parseResponse( responseObject ) {
-    console.log( "responseObject:", responseObject );
     const results = responseObject.results[0]
     const address = results.formatted_address
     const location = results.geometry.location
