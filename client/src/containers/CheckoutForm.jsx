@@ -96,9 +96,14 @@ class CheckoutForm extends React.Component {
   }
 
   render() {
+    let completeNotifcation = "Checkout Form"
+    if ( this.state.checkout_successfull ) {
+      completeNotifcation = <span className="final">Checkout Complete</span>
+    }
+
     return (
       <div id="main-container">
-        <h1>Checkout Form</h1>
+        <h1>{ completeNotifcation }</h1>
         <form>
           <PersonalDetails
             first_name={ this.state.first_name }
