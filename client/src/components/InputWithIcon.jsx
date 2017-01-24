@@ -19,7 +19,10 @@ class InputWithIcon extends React.Component {
   }
 
   render() {
-    let style = {}
+    let style = {
+      flexGrow: this.props.proportion,
+      felxShrink: this.props.proportion
+    }
 
     if ( this.props.imageName ) {
       style = {
