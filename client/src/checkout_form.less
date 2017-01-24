@@ -1,7 +1,8 @@
 @border-color: #DDDDDD;
 @border-thickness: 2px;
 @border-style: solid;
-@backgroud-color: #C3ABEC;
+@backgroud-color-top: #B7B4FC;
+@backgroud-color-bottom: #594684;
 @default-font-size: 20px;
 @success-green: #07c507;
 
@@ -11,8 +12,12 @@
   color: #444;
 }
 
-body, #app {
-  background-color: @backgroud-color;
+body {
+  background: @backgroud-color-top;
+  background: -webkit-linear-gradient(@backgroud-color-top, @backgroud-color-bottom);
+  background: -o-linear-gradient(@backgroud-color-top, @backgroud-color-bottom);
+  background: -moz-linear-gradient(@backgroud-color-top, @backgroud-color-bottom);
+  background: linear-gradient(@backgroud-color-top, @backgroud-color-bottom);
 }
 
 h1 {
@@ -59,7 +64,7 @@ textarea {
 #main-container {
   margin: 40px auto;
   width: 600px;
-  box-shadow: 10px 10px 5px ( @backgroud-color - 40 ) ;
+  box-shadow: 10px 10px 5px rgba( 0, 0, 0, 0.2 ) ;
 }
 
 .section-container {
