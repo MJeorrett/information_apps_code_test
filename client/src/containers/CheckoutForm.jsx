@@ -142,6 +142,7 @@ class CheckoutForm extends React.Component {
           <CheckoutButton
             checkoutSuccessfull={ this.state.checkout_successfull }
             onClick={ this.handleCheckoutClicked }
+            locked={ this.state.checkout_successfull }
             />
         </form>
       </div>

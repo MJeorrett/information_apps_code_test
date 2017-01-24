@@ -17,6 +17,7 @@ class CheckoutButton extends React.Component {
           className={className}
           type="submit"
           onClick={ this.props.onClick }
+          disabled={ this.props.locked }
         >{ buttonText }</button>
       </div>
     )
