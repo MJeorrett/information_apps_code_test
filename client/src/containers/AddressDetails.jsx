@@ -60,6 +60,9 @@ class AddressDetails extends React.Component {
             invalidFields={ this.props.invalidFields }
             locked={ this.props.disabled }
             proportion={ 0.05 }
+            type="number"
+            min="0"
+            step="1"
           />
           <InputWithIcon
             placeholder="Address"

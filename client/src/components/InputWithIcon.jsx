@@ -59,6 +59,8 @@ class InputWithIcon extends React.Component {
       <input
         className={ className }
         type={ this.props.type || "text" }
+        min={ this.props.min || "" }
+        step={ this.props.step || "" }
         placeholder={ placeholder }
         style={ style }
         onChange={ this.handleUpdate }
