@@ -42,14 +42,13 @@ class CheckoutForm extends React.Component {
   }
 
   handleUpdate( fieldName, newValue ) {
+
+    const stateDiff = {}
+    
     if ( fieldName === 'post_code' ) {
       this.fetchAddressForPostCode( newValue )
     }
     else {
-      const newInvalidFields = this.state.invalid_fields.slice( 0 )
-      const fieldNameIndex = newInvalidFields.indexOf( fieldName )
-      if ( fieldNameIndex != -1 ) newInvalidFields.splice( fieldNameIndex, 1 )
-
       const phoneOnlyLegalChars = /^[\d()]+$/.test( newValue )
 
       if ( fieldName === 'phone' && !phoneOnlyLegalChars && newValue !== "" ) {
@@ -57,14 +56,15 @@ class CheckoutForm extends React.Component {
         newValue = this.state.phone
       }
 
-      console.log(/^\d+$/.test( newValue ));
-
-      const stateDiff = {}
       stateDiff[fieldName] = newValue
-      stateDiff['invalid_fields'] = newInvalidFields
-
-      this.setState( stateDiff )
     }
+
+    const newInvalidFields = this.state.invalid_fields.slice( 0 )
+    const fieldNameIndex = newInvalidFields.indexOf( fieldName )
+    if ( fieldNameIndex != -1 ) newInvalidFields.splice( fieldNameIndex, 1 )
+
+    stateDiff['invalid_fields'] = newInvalidFields
+    this.setState( stateDiff )
   }
 
   fetchAddressForPostCode( postCode ) {
