@@ -53,16 +53,13 @@ class AddressDetails extends React.Component {
         </div>
         <div className="input-group">
           <InputWithIcon
-            placeholder="House No"
+            placeholder="House / Flat"
             fieldName="house_number"
             dataValue={ this.props.house_number }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
             locked={ this.props.disabled }
             proportion={ 0.05 }
-            type="number"
-            min="0"
-            step="1"
           />
           <InputWithIcon
             placeholder="Address"
