@@ -51,11 +51,11 @@ class InputWithIcon extends React.Component {
       className = "invalid"
       placeholder = "Required"
     }
-    else if ( this.props.locked ) {
+    else if ( this.props.disabled ) {
       placeholder = ""
     }
 
-    if ( this.props.locked ) {
+    if ( this.props.disabled ) {
       className += "final"
     }
 
@@ -71,7 +71,7 @@ class InputWithIcon extends React.Component {
         onChange={ this.handleUpdate }
         value={ this.props.dataValue }
         onFocus={ this.resetPlaceholderText }
-        disabled={ this.props.locked }
+        disabled={ this.props.disabled }
       />
     )
   }

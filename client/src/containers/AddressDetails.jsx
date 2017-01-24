@@ -31,7 +31,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.post_code }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
             loading={ this.props.addressLoading }
           />
           <InputWithIcon
@@ -39,7 +39,7 @@ class AddressDetails extends React.Component {
             fieldName="latitude"
             dataValue={ this.props.latitude }
             onUpdate={ this.props.onUpdate }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
             type="number"
           />
           <InputWithIcon
@@ -47,7 +47,7 @@ class AddressDetails extends React.Component {
             fieldName="longitude"
             dataValue={ this.props.longitude }
             onUpdate={ this.props.onUpdate }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
             type="number"
           />
         </div>
@@ -58,7 +58,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.house_number }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
             proportion={ 0.05 }
           />
           <InputWithIcon
@@ -67,7 +67,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.address }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
         </div>
         <div className="input-group">
@@ -75,7 +75,7 @@ class AddressDetails extends React.Component {
             onUpdate={ this.handleCountrySelected }
             country={ this.props.country }
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
           <InputWithIcon
             placeholder="City"
@@ -83,7 +83,7 @@ class AddressDetails extends React.Component {
             dataValue={ this.props.city }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
         </div>
       </div>

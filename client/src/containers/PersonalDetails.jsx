@@ -15,7 +15,7 @@ class PersonalDetails extends React.Component {
             onUpdate={ this.props.onUpdate }
             imageName="person"
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
           <InputWithIcon
             placeholder="Last Name"
@@ -24,7 +24,7 @@ class PersonalDetails extends React.Component {
             onUpdate={ this.props.onUpdate }
             imageName="person"
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
         </div>
         <div className="input-group">
@@ -35,7 +35,7 @@ class PersonalDetails extends React.Component {
             onUpdate={ this.props.onUpdate }
             imageName="envelope"
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
           <InputWithIcon
             placeholder="Phone"
@@ -44,7 +44,7 @@ class PersonalDetails extends React.Component {
             onUpdate={ this.props.onUpdate }
             imageName="phone"
             invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
+            disabled={ this.props.disabled }
           />
         </div>
       </div>
