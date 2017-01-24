@@ -61,7 +61,6 @@ class CheckoutForm extends React.Component {
 
   fetchAddressForPostCode( postCode ) {
     GoogleMapHelper.fetchDetailsForPostCode( postCode, ( addressDetails ) => {
-      console.log( addressDetails );
       const stateDiff = addressDetails || {}
       stateDiff.post_code = postCode
       this.setState( stateDiff )
