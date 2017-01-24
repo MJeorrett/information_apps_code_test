@@ -10,23 +10,7 @@ class CheckoutForm extends React.Component {
 
   constructor() {
     super()
-    this.state = {
-      first_name: "",
-      last_name: "",
-      email: "",
-      phone: "",
-      country: "",
-      city: "",
-      post_code: "",
-      house_number: "",
-      address: "",
-      additional_info: "",
-      latitude: "",
-      longitude: "",
-      invalid_fields: [],
-      checkout_successfull: false,
-      address_loading: false
-    }
+
     this.validations = [
       [ 'first_name', Validator.notBlank ],
       [ 'last_name', Validator.notBlank ],
@@ -41,6 +25,18 @@ class CheckoutForm extends React.Component {
       [ 'latitude', Validator.none ],
       [ 'longitude', Validator.none ]
     ]
+    
+    this.state = {
+      invalid_fields: [],
+      checkout_successfull: false,
+      address_loading: false
+    }
+
+    this.validations.forEach( (validation) => {
+      const fieldName = validation[0]
+      this.state[fieldName] = ""
+    })
+
     this.handleUpdate = this.handleUpdate.bind( this )
     this.handleCheckoutClicked = this.handleCheckoutClicked.bind( this )
   }
