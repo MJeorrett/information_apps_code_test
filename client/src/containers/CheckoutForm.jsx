@@ -25,7 +25,7 @@ class CheckoutForm extends React.Component {
       [ 'latitude', Validator.none ],
       [ 'longitude', Validator.none ]
     ]
-    
+
     this.state = {
       invalid_fields: [],
       checkout_successfull: false,
@@ -126,10 +126,11 @@ class CheckoutForm extends React.Component {
           <div className="section-container">
             <div className="input-group">
               <textarea
-                placeholder={ this.props.disabled ? "" : "Additional info" }
+                className={ this.state.checkout_successfull ? "final" : "" }
+                placeholder={ this.state.checkout_successfull ? "" : "Additional info" }
                 value={ this.props.additional_info }
                 onChange={ this.handleAdditionalInfoUpdate }
-                disabled={ this.props.disabled }
+                disabled={ this.state.checkout_successfull }
               ></textarea>
             </div>
           </div>

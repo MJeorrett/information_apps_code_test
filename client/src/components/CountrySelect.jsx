@@ -29,6 +29,8 @@ class CountrySelect extends React.Component {
       defaultText = "Required"
     }
 
+    if ( this.props.locked ) className += "final"
+
     const options = this.state.countries.map( (country, index) => {
       return <option key={ index } value={ country }>{ country }</option>
     })

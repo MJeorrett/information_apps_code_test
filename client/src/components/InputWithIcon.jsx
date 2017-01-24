@@ -55,6 +55,10 @@ class InputWithIcon extends React.Component {
       placeholder = ""
     }
 
+    if ( this.props.locked ) {
+      className += "final"
+    }
+
     return (
       <input
         className={ className }
