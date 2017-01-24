@@ -6,6 +6,7 @@
 @default-font-size: 20px;
 @success-color: @backgroud-color-bottom;
 
+// ELEMENTS
 * {
   font-size: @default-font-size;
   font-family: 'Quicksand', sans-serif;
@@ -61,12 +62,7 @@ textarea {
   resize: none;
 }
 
-#main-container {
-  margin: 40px auto;
-  width: 600px;
-  box-shadow: 10px 10px 5px rgba( 0, 0, 0, 0.2 ) ;
-}
-
+// CLASSES
 .section-container {
   background-color: #F9F7FD;
   border-top: 1px @border-color @border-style;
@@ -79,22 +75,29 @@ textarea {
   display: flex;
 }
 
-#additional-info {
-  height: 200%;
-}
-
 .invalid {
   border-color: tomato;
 }
 
 .checkout-successfull, button.checkout-successfull:hover {
+  background: @backgroud-color-top;
   border-color: @success-color;
   color: @success-color;
-  background: @backgroud-color-top;
 }
 
 .final {
-  font-weight: bold;
-  color: @success-color;
   border-color: @success-color;
+  color: @success-color;
+  font-weight: bold;
+}
+
+// IDS
+#main-container {
+  margin: 40px auto;
+  width: 600px;
+  box-shadow: 10px 10px 5px rgba( 0, 0, 0, 0.2 ) ;
+}
+
+#additional-info {
+  height: 200%;
 }
