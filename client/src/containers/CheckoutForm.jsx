@@ -118,10 +118,20 @@ class CheckoutForm extends React.Component {
             disabled={ this.state.checkout_successfull }
             addressLoading={ this.state.address_loading }
           />
-        <CheckoutButton
-          checkoutSuccessfull={ this.state.checkout_successfull }
-          onClick={ this.handleCheckoutClicked }
-        />
+          <div className="section-container">
+            <div className="input-group">
+              <textarea
+                placeholder={ this.props.disabled ? "" : "Additional info" }
+                value={ this.props.additional_info }
+                onChange={ this.handleAdditionalInfoUpdate }
+                disabled={ this.props.disabled }
+              ></textarea>
+            </div>
+          </div>
+          <CheckoutButton
+            checkoutSuccessfull={ this.state.checkout_successfull }
+            onClick={ this.handleCheckoutClicked }
+            />
         </form>
       </div>
     )

@@ -86,14 +86,6 @@ class AddressDetails extends React.Component {
             locked={ this.props.disabled }
           />
         </div>
-        <div className="input-group">
-          <textarea
-            placeholder={ this.props.disabled ? "" : "Additional info" }
-            value={ this.props.additional_info }
-            onChange={ this.handleAdditionalInfoUpdate }
-            disabled={ this.props.disabled }
-          ></textarea>
-        </div>
       </div>
     )
   }
