@@ -37,6 +37,9 @@ class InputWithIcon extends React.Component {
       className = "invalid"
       placeholder = "Required"
     }
+    else if ( this.props.locked ) {
+      placeholder = ""
+    }
 
     return (
       <input
