@@ -25,6 +25,32 @@ class AddressDetails extends React.Component {
     return (
       <div className="section-container">
         <div className="input-group">
+          <InputWithIcon
+            placeholder="Post code"
+            fieldName="post_code"
+            dataValue={ this.props.post_code }
+            onUpdate={ this.props.onUpdate }
+            invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
+          />
+          <InputWithIcon
+            placeholder="Latitude"
+            fieldName="latitude"
+            dataValue={ this.props.latitude }
+            onUpdate={ this.props.onUpdate }
+            locked={ this.props.disabled }
+            type="number"
+          />
+          <InputWithIcon
+            placeholder="Longitude"
+            fieldName="longitude"
+            dataValue={ this.props.longitude }
+            onUpdate={ this.props.onUpdate }
+            locked={ this.props.disabled }
+            type="number"
+          />
+        </div>
+        <div className="input-group">
           <CountrySelect
             onUpdate={ this.handleCountrySelected }
             country={ this.props.country }
@@ -35,14 +61,6 @@ class AddressDetails extends React.Component {
             placeholder="City"
             fieldName="city"
             dataValue={ this.props.city }
-            onUpdate={ this.props.onUpdate }
-            invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
-          />
-          <InputWithIcon
-            placeholder="Post code"
-            fieldName="post_code"
-            dataValue={ this.props.post_code }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
             locked={ this.props.disabled }

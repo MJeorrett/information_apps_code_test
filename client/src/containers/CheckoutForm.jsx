@@ -19,6 +19,8 @@ class CheckoutForm extends React.Component {
       post_code: "",
       address: "",
       additional_info: "",
+      latitude: "",
+      longitude: "",
       invalid_fields: [],
       checkout_successfull: false
     }
@@ -31,7 +33,9 @@ class CheckoutForm extends React.Component {
       [ 'city', Validator.notBlank ],
       [ 'post_code', Validator.notBlank ],
       [ 'address', Validator.notBlank ],
-      [ 'additional_info', Validator.none ]
+      [ 'additional_info', Validator.none ],
+      [ 'latitude', Validator.none ],
+      [ 'longitude', Validator.none ]
     ]
     this.handleUpdate = this.handleUpdate.bind( this )
     this.handleCheckoutClicked = this.handleCheckoutClicked.bind( this )
@@ -81,6 +85,8 @@ class CheckoutForm extends React.Component {
           />
           <AddressDetails
             country={ this.state.country }
+            latitude={ this.state.latitude }
+            longitude={ this.state.longitude }
             city={ this.state.city }
             post_code={ this.state.post_code }
             address={ this.state.address }

@@ -44,7 +44,7 @@ class InputWithIcon extends React.Component {
     return (
       <input
         className={ className }
-        type="text"
+        type={ this.props.type || "text" }
         placeholder={ placeholder }
         style={ style }
         onChange={ this.handleUpdate }
