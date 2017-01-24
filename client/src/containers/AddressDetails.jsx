@@ -24,7 +24,7 @@ class AddressDetails extends React.Component {
 
     return (
       <div className="section-container">
-        <div className="input-group">
+        <div className="input-group" style={{paddingBottom: "20px"}}>
           <InputWithIcon
             placeholder="Post code"
             fieldName="post_code"
@@ -52,22 +52,6 @@ class AddressDetails extends React.Component {
           />
         </div>
         <div className="input-group">
-          <CountrySelect
-            onUpdate={ this.handleCountrySelected }
-            country={ this.props.country }
-            invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
-          />
-          <InputWithIcon
-            placeholder="City"
-            fieldName="city"
-            dataValue={ this.props.city }
-            onUpdate={ this.props.onUpdate }
-            invalidFields={ this.props.invalidFields }
-            locked={ this.props.disabled }
-          />
-        </div>
-        <div className="input-group">
           <InputWithIcon
             placeholder="House No"
             fieldName="house_number"
@@ -81,6 +65,22 @@ class AddressDetails extends React.Component {
             placeholder="Address"
             fieldName="address"
             dataValue={ this.props.address }
+            onUpdate={ this.props.onUpdate }
+            invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
+          />
+        </div>
+        <div className="input-group">
+          <CountrySelect
+            onUpdate={ this.handleCountrySelected }
+            country={ this.props.country }
+            invalidFields={ this.props.invalidFields }
+            locked={ this.props.disabled }
+          />
+          <InputWithIcon
+            placeholder="City"
+            fieldName="city"
+            dataValue={ this.props.city }
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
             locked={ this.props.disabled }
