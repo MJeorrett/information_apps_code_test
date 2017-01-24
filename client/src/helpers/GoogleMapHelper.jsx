@@ -2,14 +2,22 @@ import XmlHttpHelper from './XmlHttpHelper'
 
 const GoogleMapParser = {
 
+  blankResponse: {
+    address: "",
+    latitude: "",
+    longitude: "",
+    country: "",
+    city: ""
+  },
+
   fetchDetailsForPostCode( postCode, callback ) {
-    if ( postCode.length > 5 ) {
+    if ( postCode.replace(' ', '').length >= 6 ) {
       const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${postCode}`
       XmlHttpHelper.get( url, ( responseObject ) => {
         const status = responseObject.status
         if ( status !== "OK" ) {
           console.log( "Reverse geocoding error:", responseObject.status )
-          callback( null )
+          callback( this.blankResponse )
         }
         else {
           const addressDetails = this.parseResponse( responseObject )
@@ -18,7 +26,7 @@ const GoogleMapParser = {
       })
     }
     else {
-      callback( null )
+      callback( this.blankResponse )
     }
   },
 

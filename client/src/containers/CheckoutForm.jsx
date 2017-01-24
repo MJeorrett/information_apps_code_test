@@ -23,7 +23,8 @@ class CheckoutForm extends React.Component {
       latitude: "",
       longitude: "",
       invalid_fields: [],
-      checkout_successfull: false
+      checkout_successfull: false,
+      address_loading: false
     }
     this.validations = [
       [ 'first_name', Validator.notBlank ],
@@ -60,9 +61,13 @@ class CheckoutForm extends React.Component {
   }
 
   fetchAddressForPostCode( postCode ) {
+    this.setState({
+      address_loading: true
+    })
     GoogleMapHelper.fetchDetailsForPostCode( postCode, ( addressDetails ) => {
-      const stateDiff = addressDetails || {}
+      const stateDiff = addressDetails
       stateDiff.post_code = postCode
+      stateDiff.address_loading = false
       this.setState( stateDiff )
     })
   }
@@ -108,6 +113,7 @@ class CheckoutForm extends React.Component {
             onUpdate={ this.handleUpdate }
             invalidFields={ this.state.invalid_fields }
             disabled={ this.state.checkout_successfull }
+            addressLoading={ this.state.address_loading }
           />
         <CheckoutButton
           checkoutSuccessfull={ this.state.checkout_successfull }

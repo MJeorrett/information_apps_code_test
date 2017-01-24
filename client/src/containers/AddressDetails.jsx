@@ -32,6 +32,7 @@ class AddressDetails extends React.Component {
             onUpdate={ this.props.onUpdate }
             invalidFields={ this.props.invalidFields }
             locked={ this.props.disabled }
+            loading={ this.props.addressLoading }
           />
           <InputWithIcon
             placeholder="Latitude"

@@ -9,6 +9,7 @@ class InputWithIcon extends React.Component {
   }
 
   handleUpdate( ev ) {
+    if ( this.props.loading ) return
     const newValue = ev.target.value
     this.props.onUpdate( this.props.fieldName, newValue )
   }
@@ -28,6 +29,16 @@ class InputWithIcon extends React.Component {
         backgroundPosition: "12px 9px",
         backgroundSize: "16px 16px",
         paddingLeft: "45px"
+      }
+    }
+
+    if ( this.props.loading ) {
+      style = {
+        backgroundImage: `url(/images/loading.gif)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "auto",
+        backgroundPosition: "103px -12px",
+        backgroundSize: "80px 60px",
       }
     }
 
