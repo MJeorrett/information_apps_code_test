@@ -1,4 +1,4 @@
-### Code Test for Information Apps
+# Code Test for Information Apps
 
 ## Installation
 - clone repo
